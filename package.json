@@ -1,0 +1,17 @@
+{
+  "name": "linkedin-boot",
+  "version": "1.0.0",
+  "main": "./app/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node ./app/index.ts"
+  },
+  "dependencies": {
+    "@types/selenium-webdriver": "^4.1.13",
+    "chromedriver": "^111.0.0",
+    "dotenv": "^16.0.3",
+    "selenium-webdriver": "^4.8.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
