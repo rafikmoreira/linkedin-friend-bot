@@ -2,6 +2,8 @@ import { Builder, By, Key, until } from "selenium-webdriver";
 import { Options } from "selenium-webdriver/chrome";
 
 class LinkedInBot {
+  private numberOfFriendsAdded = 0;
+  private currentPageNumber = 1;
   private chromeOptions = new Options();
   private role = process.env.LINKEDIN_FRIEND_ROLE || "";
   private email = process.env.LINKEDIN_EMAIL || "";
@@ -111,6 +113,10 @@ class LinkedInBot {
             await sendButton.click();
             // Espera entre 5 e 13 segundos para não ser bloqueado
             await driver.sleep(Math.floor(Math.random() * 13000) + 5000);
+            this.numberOfFriendsAdded++;
+            console.log(
+              `Número de conexões adicionadas: ${this.numberOfFriendsAdded}`
+            );
           }
         } catch (e) {
           if (this.isReloadWindowOnError) {
@@ -128,6 +134,8 @@ class LinkedInBot {
           );
 
           await nextButton.click();
+          this.currentPageNumber++;
+          console.log(`Número da página atual: ${this.currentPageNumber}`);
         }
       }
     } finally {
