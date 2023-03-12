@@ -10,7 +10,7 @@ LINKEDIN_FRIEND_ROLE=tech recruiter
 RELOAD_WINDOW_ON_ERROR=false
 ```
 
-# Instalação
+## Instalação
 Clone o repositório e acesse a pasta do projeto:
 ```
 git clone https://github.com/seu-username/linkedin-bot.git
@@ -27,7 +27,7 @@ Inicie o bot:
 npm start
 ```
 
-# Dependências
+## Dependências
 "@types/selenium-webdriver": "^4.1.13"
 
 "chromedriver": "^111.0.0"
@@ -40,5 +40,5 @@ npm start
 
 "typescript": "^4.9.5"
 
-# Licença
+## Licença
 Este projeto está licenciado sob a licença MIT. 
