@@ -6,6 +6,7 @@ class LinkedInBot {
   private role = process.env.LINKEDIN_FRIEND_ROLE || "";
   private email = process.env.LINKEDIN_EMAIL || "";
   private password = process.env.LINKEDIN_PASSWORD || "";
+  private isReloadWindowOnError = process.env.RELOAD_WINDOW_ON_ERROR || false;
 
   constructor() {
     this.requestFriend();
@@ -112,11 +113,14 @@ class LinkedInBot {
             await driver.sleep(Math.floor(Math.random() * 13000) + 5000);
           }
         } catch (e) {
+          if (this.isReloadWindowOnError) {
+            await driver.navigate().refresh();
+            await driver.sleep(2500);
+          }
           // Scroll para o final da página
           await driver.executeScript(
             "window.scrollTo(0, document.body.scrollHeight);"
           );
-          await driver.sleep(2000);
           // Clica no botão que contem o texto avançar para ir para a próxima página
           const nextButton = await driver.wait(
             until.elementLocated(By.xpath("//button[@aria-label='Avançar']")),
