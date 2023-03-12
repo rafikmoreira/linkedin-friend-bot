@@ -10,7 +10,6 @@ class LinkedInBot {
   constructor() {
     this.requestFriend();
     this.chromeOptions.addArguments("--disable-extensions");
-    console.log(this.role, this.email, this.password);
 
     if (!this.role || !this.email || !this.password) {
       throw new Error("Missing environment variables!!");
