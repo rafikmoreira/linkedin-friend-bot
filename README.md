@@ -13,7 +13,7 @@ RELOAD_WINDOW_ON_ERROR=false
 ## Instalação
 Clone o repositório e acesse a pasta do projeto:
 ```
-git clone https://github.com/seu-username/linkedin-bot.git
+git clone https://github.com/rafikmoreira/linkedin-friend-bot.git
 cd linkedin-bot
 ```
 
